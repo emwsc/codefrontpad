@@ -1,6 +1,6 @@
 import sanitizeHtml from "sanitize-html";
 
-export const toReadableDate = date => new Date(date).toLocaleString();
+export const toReadableDate = date => date.toLocaleString();
 
 const replaceNbsps = str => {
   var re = new RegExp(String.fromCharCode(160), "g");

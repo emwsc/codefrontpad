@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+import dayjs from "dayjs";
+
 import { EVENTS_URL, KEYWORDS } from "./constants";
 import { loadEvents, setIsLoading } from "./actions";
 
@@ -14,6 +16,10 @@ const keywordExists = (str, keyword) => {
   return regExp.test(str);
 };
 
+const sortEvents = (a, b) => {
+  return dayjs(a.starts_at).unix() - dayjs(b.starts_at).unix();
+};
+
 export const useOnLoad = dispatch => {
   useEffect(() => {
     async function onLoad() {
@@ -26,11 +32,15 @@ export const useOnLoad = dispatch => {
               !eventsObject[event.id] &&
               keywordExists(event.description_html)
             )
-              eventsObject[event.id] = event;
+              eventsObject[event.id] = {
+                ...event,
+                starts_at: new Date(event.starts_at)
+              };
           });
           const events = Object.keys(eventsObject).map(
             key => eventsObject[key]
           );
+          events.sort(sortEvents);
           dispatch(loadEvents(events));
         });
       } catch (error) {
