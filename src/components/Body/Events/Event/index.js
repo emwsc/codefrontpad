@@ -37,10 +37,10 @@ const Event = ({ event }) => {
                 <i className="fas fa-info" />
                 {isDetailsExpanded ? "Скрыть детали" : "Показать детали"}
               </StyledShowDetails>
-              <StyledOpenEvent href={event.url} target="_blank">
+              {/* <StyledOpenEvent href={event.url} target="_blank">
                 <i className="fas fa-external-link-square-alt" />
                 Открыть событие
-              </StyledOpenEvent>
+              </StyledOpenEvent> */}
             </StyledButtons>
           </React.Fragment>
         )}

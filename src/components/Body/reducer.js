@@ -1,10 +1,29 @@
 import TYPES from "./types";
+import { sortEvents } from "./utils";
 
 const reducer = (state, action) => {
   switch (action.type) {
     case TYPES.LOAD_EVENTS: {
-      const { events } = action.payload;
-      return { ...state, events, isLoading: false };
+      debugger;
+      const { events: nextEvents } = action.payload;
+      const { events: prevEvents } = state;
+
+      const eventsObject = {};
+      prevEvents.concat(nextEvents).forEach(event => {
+        if (!eventsObject[event.id])
+          eventsObject[event.id] = {
+            ...event
+          };
+      });
+      const events = Object.keys(eventsObject)
+        .map(key => eventsObject[key])
+        .sort(sortEvents);
+
+      return {
+        ...state,
+        events,
+        isLoading: false
+      };
     }
     case TYPES.SET_IS_LOADING: {
       const { isLoading } = action.payload;
