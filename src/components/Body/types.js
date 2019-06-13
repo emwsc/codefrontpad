@@ -1,4 +1,0 @@
-export default {
-  LOAD_EVENTS: "LOAD_EVENTS",
-  SET_IS_LOADING: "SET_IS_LOADING"
-};

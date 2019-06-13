@@ -10,10 +10,11 @@ class TimePad {
   /**
    * Получить события по ключевым словам с timepad.ru
    * @param {function} dispatchLoadEvents Фукнция для сохранения полученых событий
+   * @param {string[]} keywords
    */
-  getEvents = async dispatchLoadEvents => {
+  getEvents = async (dispatchLoadEvents, keywords) => {
     try {
-      KEYWORDS.forEach(async keyword => {
+      keywords.forEach(async keyword => {
         const eventsForKeyWord = await this._getEvents(keyword);
         const events = eventsForKeyWord.map(event => ({
           ...event,

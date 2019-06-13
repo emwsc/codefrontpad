@@ -6,6 +6,7 @@ export const StyledGrid = styled.div`
   grid-template-columns: minmax(250px, 1fr) 1fr;
   grid-template-rows: repeat(auto-fit, minmax(25px, auto) minmax(25px, auto));
   min-height: 100%;
+  margin-bottom: 10px;
 `;
 
 export const StyledTableHeader = styled.div`
