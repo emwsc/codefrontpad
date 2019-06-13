@@ -24,9 +24,28 @@ const reducer = (state, action) => {
         isLoading: false
       };
     }
+    case TYPES.SET_IS_SETTINGS_VISIBILE: {
+      const { isSettingsVisibile } = action.payload;
+      return { ...state, isSettingsVisibile };
+    }
     case TYPES.SET_IS_LOADING: {
       const { isLoading } = action.payload;
       return { ...state, isLoading };
+    }
+    case TYPES.ADD_KEYWORD: {
+      return {
+        ...state,
+        keywords: [...state.keywords, action.payload.keyword]
+      };
+    }
+    case TYPES.REMOVE_KEYWORD: {
+      return {
+        ...state,
+        keywords: state.keywords.filter(x => x !== action.payload.keyword)
+      };
+    }
+    case TYPES.CLEAR_EVENTS: {
+      return { ...state, events: [] };
     }
     default:
       return state;

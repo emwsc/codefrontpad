@@ -1,4 +1,5 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { buttonStyles } from "../../../../common/styles";
 
 export const StyledEventTitle = styled.a`
   color: #e8db7d;
@@ -42,21 +43,6 @@ export const StyledButtons = styled.div`
   margin-top: 10px;
   justify-content: space-between;
   width: 330px;
-`;
-
-const buttonStyles = css`
-  background: #82204a;
-  border-radius: 3px;
-  border: none;
-  color: #eff7ff;
-  cursor: pointer;
-  font-size: 12px;
-  outline-color: #eff7ff;
-  padding: 5px;
-  text-align: center;
-  & > i {
-    margin-right: 10px;
-  }
 `;
 
 export const StyledShowDetails = styled.button`
