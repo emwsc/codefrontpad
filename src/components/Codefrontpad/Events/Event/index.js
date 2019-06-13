@@ -3,7 +3,6 @@ import { toReadableDate, sanitaze } from "./utils";
 
 import {
   StyledButtons,
-  StyledOpenEvent,
   StyledEventTitle,
   StyledEventDescription,
   StyledDetails,

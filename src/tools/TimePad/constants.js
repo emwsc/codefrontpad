@@ -9,5 +9,7 @@ export const KEYWORDS = [
   "vue",
   "angular",
   "frontend",
-  "фронтенд"
+  "фронтенд",
+  "БЭМ",
+  "webpack"
 ];

@@ -4,7 +4,6 @@ import { sortEvents } from "./utils";
 const reducer = (state, action) => {
   switch (action.type) {
     case TYPES.LOAD_EVENTS: {
-      debugger;
       const { events: nextEvents } = action.payload;
       const { events: prevEvents } = state;
 
