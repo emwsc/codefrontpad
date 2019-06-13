@@ -15,6 +15,10 @@ export const getSavesKeywords = () => {
   return JSON.parse(savedKeywordsJSON);
 };
 
+export const saveKeywords = keywords => {
+  window.localStorage["savedKeywordsJSON"] = JSON.stringify(keywords);
+};
+
 export const sortEvents = (a, b) => {
   return dayjs(a.starts_at).unix() - dayjs(b.starts_at).unix();
 };

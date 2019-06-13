@@ -1,5 +1,5 @@
 import TYPES from "./types";
-import { sortEvents } from "./utils";
+import { sortEvents, saveKeywords } from "./utils";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -33,15 +33,19 @@ const reducer = (state, action) => {
       return { ...state, isLoading };
     }
     case TYPES.ADD_KEYWORD: {
+      const keywords = [...state.keywords, action.payload.keyword];
+      saveKeywords(keywords);
       return {
         ...state,
-        keywords: [...state.keywords, action.payload.keyword]
+        keywords
       };
     }
     case TYPES.REMOVE_KEYWORD: {
+      const keywords = state.keywords.filter(x => x !== action.payload.keyword);
+      saveKeywords(keywords);
       return {
         ...state,
-        keywords: state.keywords.filter(x => x !== action.payload.keyword)
+        keywords
       };
     }
     case TYPES.CLEAR_EVENTS: {
