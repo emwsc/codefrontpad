@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render testing render 1`] = `
+<Fragment>
+  <styled.a
+    href="url"
+    target="_blank"
+  >
+    name
+  </styled.a>
+  <div>
+    2019-8-15 19:00:00
+  </div>
+  <styled.div>
+    <div>
+      description_short
+    </div>
+    <styled.div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "description_html",
+        }
+      }
+      isDetailsExpanded={false}
+    />
+    <styled.div>
+      <styled.button
+        onClick={[Function]}
+        title="Показать подробное описание события"
+      >
+        <i
+          className="fas fa-info"
+        />
+        Показать детали
+      </styled.button>
+    </styled.div>
+  </styled.div>
+</Fragment>
+`;
+
+exports[`render testing render without description html 1`] = `
+<Fragment>
+  <styled.a
+    href="url"
+    target="_blank"
+  >
+    name
+  </styled.a>
+  <div>
+    2019-8-15 19:00:00
+  </div>
+  <styled.div>
+    <div>
+      description_short
+    </div>
+  </styled.div>
+</Fragment>
+`;
