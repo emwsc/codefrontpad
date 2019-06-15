@@ -5,8 +5,8 @@ import "jest-styled-components";
 import Event from "../index";
 import { StyledDetails, StyledShowDetails } from "../styled";
 
-describe("render testing", () => {
-  test("render", () => {
+describe("Render <Event/>", () => {
+  test("Render with all props", () => {
     const event = {
       id: 0,
       name: "name",
@@ -19,7 +19,7 @@ describe("render testing", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  test("render without description html", () => {
+  test("Render without description html", () => {
     const event = {
       id: 0,
       name: "name",
@@ -31,7 +31,7 @@ describe("render testing", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("description_html max-height 25px for isDetailsExpanded eq false", () => {
+  it("Render with description_html. Shoud be max-height 25px for isDetailsExpanded eq false", () => {
     const event = {
       id: 0,
       name: "name",
@@ -49,7 +49,7 @@ describe("render testing", () => {
     );
   });
 
-  it("description_html full height for isDetailsExpanded eq true", () => {
+  it("Render with description_html. Shoud be full height for isDetailsExpanded eq true", () => {
     const event = {
       id: 0,
       name: "name",

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render testing render 1`] = `
+exports[`Render <Event/> Render with all props 1`] = `
 <Fragment>
   <styled.a
     href="url"
@@ -38,7 +38,7 @@ exports[`render testing render 1`] = `
 </Fragment>
 `;
 
-exports[`render testing render without description html 1`] = `
+exports[`Render <Event/> Render without description html 1`] = `
 <Fragment>
   <styled.a
     href="url"
