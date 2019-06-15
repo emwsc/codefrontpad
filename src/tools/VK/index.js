@@ -8,7 +8,7 @@ class VK {
    * @param {string} text Пост на стене ВК
    * @param {string} id ИД поста
    */
-  _parseWallPostText = (text, id) => {
+  parseWallPostText = (text, id) => {
     const eventRegExp = /Следующий митап (PiterJS(\s*)#(\d){2,})/gim;
     const urlRegExp = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gim;
     const dateRegExp = new RegExp(`\\d{1,2}\\s(${MONTHS.join("|")})`, "gim");
@@ -54,7 +54,7 @@ class VK {
       const results = await fetch(BASE_API_URL);
       const { response } = await results.json();
       const events = response.items
-        .map(item => this._parseWallPostText(item.text, item.id))
+        .map(item => this.parseWallPostText(item.text, item.id))
         .filter(item => item);
       dispatchLoadEvents(events);
     } catch (error) {
