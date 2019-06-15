@@ -1,4 +1,4 @@
-import { TIMEPAD_EVENTS_API_URL, KEYWORDS } from "./constants";
+import { TIMEPAD_EVENTS_API_URL } from "./constants";
 
 class TimePad {
   _getEvents = async keyword => {
